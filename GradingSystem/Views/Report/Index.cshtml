@@ -1,0 +1,12 @@
+﻿@model List<SelectListItem>
+
+
+<div>
+    <form asp-controller="Report" asp-action="GetReport" style="margin-top : 100px">
+        <a>Getirilecek Raporların Haftası :</a>
+        <select name="selectedWeek" class="form-control" style="margin-top:10px" asp-items="@Model"></select>
+
+        <button type="submit" style="margin-top:10px" class="btn btn-primary">Getir</button>
+    </form>
+</div>
+

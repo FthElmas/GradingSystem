@@ -1,0 +1,12 @@
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\bin\Debug\net7.0\GradingSystem.DTO.deps.json
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\bin\Debug\net7.0\GradingSystem.DTO.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\bin\Debug\net7.0\GradingSystem.DTO.pdb
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\obj\Debug\net7.0\GradingSystem.DTO.csproj.AssemblyReference.cache
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\obj\Debug\net7.0\GradingSystem.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\obj\Debug\net7.0\GradingSystem.DTO.AssemblyInfoInputs.cache
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\obj\Debug\net7.0\GradingSystem.DTO.AssemblyInfo.cs
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\obj\Debug\net7.0\GradingSystem.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\obj\Debug\net7.0\GradingSystem.DTO.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\obj\Debug\net7.0\refint\GradingSystem.DTO.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\obj\Debug\net7.0\GradingSystem.DTO.pdb
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DTO\obj\Debug\net7.0\ref\GradingSystem.DTO.dll

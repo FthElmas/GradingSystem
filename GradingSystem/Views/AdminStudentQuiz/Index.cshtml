@@ -1,0 +1,52 @@
+﻿@model List<StudentQuizSelectDTO>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Öğrenci Quiz Notları</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container mt-5" style="margin-top:100px">
+
+
+        <div class="row mt-3" style="margin-top:100px">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Sınav</th>
+                            <th>Öğrenci</th>
+                            <th>Not</th>
+                            <th>Açıklama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var studentQuiz in Model)
+                        {
+                            <tr>
+                                <td>@studentQuiz.QuizName</td>
+                                <td>@studentQuiz.StudentName @studentQuiz.StudentSurname</td>
+                                <td>@studentQuiz.Mark</td>
+                                <td>@studentQuiz.Description</td>
+                                <td class="text-right">
+                                    <a asp-controller="AdminStudentQuiz" asp-action="DeleteStudentQuiz" asp-route-quiz="@studentQuiz.QuizID" asp-route-student="@studentQuiz.StudentID" class="btn btn-danger"><i class="fa fa-trash"></i> Sil</a>
+                                    <a asp-controller="AdminStudentQuiz" asp-action="UpdateStudentQuiz" asp-route-quiz="@studentQuiz.QuizID" asp-route-student="@studentQuiz.StudentID" class="btn btn-warning"><i class="fa fa-edit"></i> Güncelle</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
+

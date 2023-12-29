@@ -1,0 +1,51 @@
+﻿@model StudentUpdateDTO
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Öğrenci Güncelleme</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2>Öğrenci Güncelleme</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <form asp-controller="AdminStudent" asp-action="UpdateStudent">
+                    @Html.HiddenFor(model => model.StudentID)
+
+                    <div class="form-group">
+                        <label asp-for="StudentName">Ad:</label>
+                        <input asp-for="StudentName" type="text" class="form-control" id="StudentName" name="StudentName" value="@Model.StudentName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="StudentSurname">Soyad:</label>
+                        <input asp-for="StudentSurname" type="text" class="form-control" id="StudentSurname" name="StudentSurname" value="@Model.StudentSurname" required>
+                    </div>
+
+                    <div class="form-check">
+                        <input asp-for="IsEliminated" type="checkbox" class="form-check-input" id="IsEliminated" name="IsEliminated">
+                        <label asp-for="IsEliminated" class="form-check-label" for="IsEliminated">Eliminated</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input asp-for="IsActive" type="checkbox" class="form-check-input" id="IsActive" name="IsActive">
+                        <label asp-for="IsActive" class="form-check-label" for="IsActive">Active</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

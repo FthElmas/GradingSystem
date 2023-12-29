@@ -1,0 +1,29 @@
+﻿@model StudentReportPage
+
+<div id="cards" class="container">
+    <ol>
+        @foreach (var item in Model.Student)
+        {
+            var x = @Model.StudentReport[Model.Student.IndexOf(item)];
+            <li>
+                <div id="myCardDiv" class="card">
+                    <div class="card-body">
+
+                        <h5 class="card-title text-center">@item.StudentName @item.StudentSurname</h5>
+                        <p class="card-text">Bugün Girilen Rapor Sayisi : @Model.StudentReport[Model.Student.IndexOf(item)].Count</p>
+                        <p class="card-text">Bu hafta girilen rapor sayisi : @Model.WeekReport[Model.Student.IndexOf(item)].Count</p>
+                        @if (x.Count >= 1)
+                        {
+                            <p class="card-text">Soru : @x[x.Count - 1].ReportName     Son Raporlama : @x[x.Count - 1].Report</p>
+                        }
+                    </div>
+                    <div class="card-body medium text-center">
+                        <a href="#" onclick="setStudentId('@item.StudentID');" class="card-link row-cols-sm-2 btn-project">Project</a>
+                        <a href="#" onclick="setStudentId('@item.StudentID');" class="card-link row-cols-sm-2 btn-quiz">Quiz</a>
+                        <a href="#" onclick="setStudentId('@item.StudentID');" class=" card-link row-cols-sm-2 btn-report">Report</a>
+                    </div>
+                </div>
+            </li>
+        }
+    </ol>
+</div>

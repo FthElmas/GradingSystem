@@ -1,0 +1,48 @@
+﻿@model List<QuizSelectDTO>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sınavlar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container mt-5" style="margin-top:100px">
+
+
+        <div class="row mt-3" style="margin-top:100px">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>İsim</th>
+                            <th>Açıklama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var quiz in Model)
+                        {
+                            <tr>
+                                <td>@quiz.QuizID</td>
+                                <td>@quiz.QuizName</td>
+                                <td>@quiz.QuizDescription</td>
+                                <td class="text-right">
+                                    <a asp-controller="AdminQuiz" asp-action="DeleteQuiz" asp-route-quiz="@quiz.QuizID" class="btn btn-danger"><i class="fa fa-trash"></i> Sil</a>
+                                    <a asp-controller="AdminQuiz" asp-action="UpdateQuiz" asp-route-quiz="@quiz.QuizID" class="btn btn-warning"><i class="fa fa-edit"></i> Güncelle</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

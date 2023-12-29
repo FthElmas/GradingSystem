@@ -1,0 +1,174 @@
+﻿@model StudentPageDTO
+
+
+    
+
+@{
+    
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnail Grid</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="~/js/myform.js"></script>
+    
+    <style>
+        .form-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #f8f9fa;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .closeBtn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .card {
+            width: calc(25% - 10px);
+            margin-bottom: 20px;
+        }
+
+        body {
+            margin-top: 80px;
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+
+<body>
+    @await Component.InvokeAsync("Student");
+
+
+    <div class="container ">
+        <div id="quizAddForm" class="form-container" style="margin-top: 80px">
+            <span class="closeBtn">&times;</span>
+            <h3>Add Quiz</h3>
+            <form asp-action="AddQuiz" asp-controller="Studentpage">
+                <div class="mb-3">
+                    <label asp-for="Quiz.QuizName" class="form-label">Quiz Name:</label>
+                    <input type="text" asp-for="Quiz.QuizName" class="form-control" id="quizAddName" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Quiz.QuizDescription" class="form-label">Quiz Description:</label>
+                    <textarea asp-for="Quiz.QuizDescription" class="form-control" id="quizAddDescription" required></textarea>
+                </div>
+                <button type="submit" value="AddQuiz" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+        <div id="reportForm" class="form-container" style="margin-top: 80px">
+            <span class="closeBtn">&times;</span>
+            <h3>Report</h3>
+            <form>
+                <div class="mb-3">
+                    <label  class="form-label">Report Name:</label>
+                    <input  type="text" class="form-control" id="reportName" required>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Report:</label>
+                    <textarea  class="form-control" id="report" rows="3" required></textarea>
+                </div>
+                <button type="button" id="addReportBtn" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+
+        <div id="quizForm" class="form-container" style="margin-top: 80px">
+            <span class="closeBtn">&times;</span>
+            <h3>Quiz</h3>
+            <form asp-action="AddQuizMark" asp-controller="Studentpage" method="post">
+                <div class="mb-3">
+                    <label asp-for="StudentQuiz.QuizID" class="form-label">Quiz Name:</label>
+                    <select asp-for="StudentQuiz.QuizID"  asp-items="@Model.QuizList" class="form-control" id="quizName" required></select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="StudentMark.Mark" class="form-label">Mark:</label>
+                    <input asp-for="StudentMark.Mark" type="number" class="form-control" id="quizMark" min="1" max="100" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="StudentQuiz.Description" class="form-label">Description:</label>
+                    <textarea asp-for="StudentQuiz.Description" class="form-control" id="quizDescription" rows="3" required></textarea>
+                </div>
+                <button type="button" id="addQuizBtn" class="btn btn-primary">Add</button>
+                <button type="button" id="QuizBtn" class="btn-quizAdd btn btn-primary">Quiz</button>
+            </form>
+        </div>
+
+        <div id="projectForm" class="form-container" style="margin-top: 80px">
+            <span class="closeBtn">&times;</span>
+            <h3>Project</h3>
+            <form asp-action="AddProjectMark" asp-controller="Studentpage" method="post">
+                <div class="mb-3">
+                    <label asp-for="StudentProject.ProjectID" class="form-label">Project Name:</label>
+                    <select asp-for="StudentProject.ProjectID" asp-items="@Model.ProjectList" class="form-control" id="projectName" required></select>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="StudentMark.Mark" class="form-label">Mark:</label>
+                    <input asp-for="StudentMark.Mark" type="number" class="form-control" id="projectMark" min="1" max="100" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="StudentProject.Description" class="form-label">Description:</label>
+                    <textarea asp-for="StudentProject.Description" class="form-control" id="projectDescription" rows="3" required></textarea>
+                </div>
+                <button type="button" id="addProjectBtn" class="btn btn-primary">Add</button>
+                <button type="button" id="ProjectBtn" class="btn-projectAdd btn btn-primary">Project</button>
+            </form>
+        </div>
+
+
+        <div id="projectAddForm" class="form-container" style="margin-top: 80px">
+            <span class="closeBtn">&times;</span>
+            <h3>Add Project</h3>
+            <form asp-action="AddProject" asp-controller="Studentpage">
+                <div class="mb-3">
+                    <label asp-for="Project.ProjectName" class="form-label">Project Name:</label>
+                    <input type="text" asp-for="Project.ProjectName" class="form-control" id="projectAddName" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Project.ProjectDescription" class="form-label">Project Description:</label>
+                    <textarea asp-for="Project.ProjectDescription" class="form-control" id="projectAddDescription" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Project.ProjectStartDate" class="form-label">Project Start Date:</label>
+                    <input type="date" asp-for="Project.ProjectStartDate" class="form-control" id="projectAddStartDate" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Project.ProjectEndDate" class="form-label">Project End Date:</label>
+                    <input type="date" asp-for="Project.ProjectEndDate" class="form-control" id="projectAddEndDate" required>
+                </div>
+                <button type="submit" id="addProjectBigBtn" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+        
+    </div>
+    
+   
+</body>
+
+</html>

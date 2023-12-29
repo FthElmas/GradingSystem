@@ -1,0 +1,17 @@
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\bin\Debug\net7.0\GradingSystem.DAL.deps.json
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\bin\Debug\net7.0\GradingSystem.DAL.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\bin\Debug\net7.0\GradingSystem.DAL.pdb
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\bin\Debug\net7.0\GradingSystem.Core.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\bin\Debug\net7.0\GradingSystem.DTO.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\bin\Debug\net7.0\GradingSystem.Core.pdb
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\bin\Debug\net7.0\GradingSystem.DTO.pdb
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\GradingSystem.DAL.csproj.AssemblyReference.cache
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\GradingSystem.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\GradingSystem.DAL.AssemblyInfoInputs.cache
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\GradingSystem.DAL.AssemblyInfo.cs
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\GradingSystem.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\GradingSystem.DAL.csproj.CopyComplete
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\GradingSystem.DAL.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\refint\GradingSystem.DAL.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\GradingSystem.DAL.pdb
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.DAL\obj\Debug\net7.0\ref\GradingSystem.DAL.dll

@@ -1,0 +1,47 @@
+﻿@model CustomerAddDTO
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Müşteri Ekle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2>Müşteri Ekle</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <form asp-controller="AdminCustomer" asp-action="AddCustomer">
+                    @Html.HiddenFor(model => model.CustomerID)
+
+                    <div class="form-group">
+                        <label asp-for="CompanyName">Şirket İsmi:</label>
+                        <input asp-for="CompanyName" type="text" class="form-control" id="CourseName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Email">Şirket Email:</label>
+                        <input asp-for="Email" type="email" class="form-control" id="CourseName" required>
+                    </div>
+
+                    <div class="form-check">
+                        <input asp-for="IsActive" type="checkbox" class="form-check-input" id="IsActive">
+                        <label asp-for="IsActive" class="form-check-label" for="IsActive">Aktif Mi</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

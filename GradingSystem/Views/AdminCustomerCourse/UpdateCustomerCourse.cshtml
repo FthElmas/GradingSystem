@@ -1,0 +1,58 @@
+﻿@model CustomerCourseUpdateDTO
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Müşteri Ekle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2>Müşteri Ekle</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <form asp-controller="AdminCustomerCourse" asp-action="UpdateCustomerCourse">
+                    @Html.HiddenFor(model => model.ID)
+                    @Html.HiddenFor(model => model.CreatedDate)
+                    <div class="form-group">
+                        <label asp-for="Name">Şirket Kursu İsmi:</label>
+                        <input asp-for="Name" type="text" value="@Model.Name" class="form-control" id="CourseName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description">Kurs Müfredatı veya Açıklaması:</label>
+                        <textarea asp-for="Description"  class="form-control"  id="Description" required>@Model.Description</textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="CourseStartDate">Kurs Başlangıç Tarihi:  @Model.CourseStartDate</label>
+                        <input asp-for="CourseStartDate" type="date" class="form-control" id="CourseStartDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CourseEndDate">Kurs Bitiş Tarihi:  @Model.CourseEndDate</label>
+                        <input asp-for="CourseEndDate" type="date" class="form-control" id="CourseStartDate" required>
+                    </div>
+
+                    <div class="form-check">
+                        <input asp-for="IsActive" type="checkbox" class="form-check-input" id="IsActive">
+                        <label asp-for="IsActive" class="form-check-label" for="IsActive">Aktif Mi</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

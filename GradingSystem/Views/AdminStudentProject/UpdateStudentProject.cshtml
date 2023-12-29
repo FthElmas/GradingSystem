@@ -1,0 +1,47 @@
+﻿@model StudentProjectDTO
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proje Notu Düzenle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2>Quiz Düzenle</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <form asp-controller="AdminStudentQuiz" asp-action="UpdateStudentQuiz">
+                    @Html.HiddenFor(model => model.ProjectID)
+                    @Html.HiddenFor(model => model.StudentID)
+                    @Html.HiddenFor(model => model.StudentMarkID)
+                    <div class="form-group">
+                        <label asp-for="Description">Açıklama:</label>
+                        <textarea asp-for="Description" type="text" class="form-control" id="Description" required>@Model.Description</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Not:</label>
+                        <input name="mark" type="number" class="form-control" id="mark" required>
+                    </div>
+
+                    <div class="form-check">
+                        <input asp-for="IsActive" type="checkbox" class="form-check-input" id="IsActive">
+                        <label asp-for="IsActive" class="form-check-label" for="IsActive">Aktif Mi</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

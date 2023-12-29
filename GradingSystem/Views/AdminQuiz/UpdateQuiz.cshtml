@@ -1,0 +1,46 @@
+﻿@model QuizUpdateDTO
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Düzenle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2>Quiz Düzenle</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <form asp-controller="AdminQuiz" asp-action="UpdateQuiz">
+                    @Html.HiddenFor(model => model.QuizID)
+
+                    <div class="form-group">
+                        <label asp-for="QuizName">Quiz İsmi:</label>
+                        <input asp-for="QuizName" type="text" value="@Model.QuizName" class="form-control" id="QuizName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="QuizDescription">Quiz Açıklaması:</label>
+                        <textarea asp-for="QuizDescription" class="form-control" id="QuizDescription" required>@Model.QuizDescription</textarea>
+                    </div>
+
+                    <div class="form-check">
+                        <input asp-for="IsActive" type="checkbox" class="form-check-input" id="IsActive">
+                        <label asp-for="IsActive" class="form-check-label" for="IsActive">Aktif Mi</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

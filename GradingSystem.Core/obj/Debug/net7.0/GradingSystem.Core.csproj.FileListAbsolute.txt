@@ -1,0 +1,11 @@
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\bin\Debug\net7.0\GradingSystem.Core.deps.json
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\bin\Debug\net7.0\GradingSystem.Core.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\bin\Debug\net7.0\GradingSystem.Core.pdb
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\obj\Debug\net7.0\GradingSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\obj\Debug\net7.0\GradingSystem.Core.AssemblyInfoInputs.cache
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\obj\Debug\net7.0\GradingSystem.Core.AssemblyInfo.cs
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\obj\Debug\net7.0\GradingSystem.Core.csproj.CoreCompileInputs.cache
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\obj\Debug\net7.0\GradingSystem.Core.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\obj\Debug\net7.0\refint\GradingSystem.Core.dll
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\obj\Debug\net7.0\GradingSystem.Core.pdb
+C:\Users\Fatih\source\repos\GradingSystem\GradingSystem.Core\obj\Debug\net7.0\ref\GradingSystem.Core.dll

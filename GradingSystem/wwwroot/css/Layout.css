@@ -1,0 +1,66 @@
+﻿body {
+    min-height: 100vh;
+    background: url('/Images/login-bg.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.7); /* Şeffaflık ekledik */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background 0.3s; /* Renk geçiş efekti ekledik */
+}
+
+.logo {
+    font-size: 24px; /* Daha küçük bir logo font boyutu */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+    .navbar a {
+        font-size: 14px;
+        color: #fff;
+        font-weight: 200;
+        text-decoration: none;
+        margin-left: 20px; /* Daha az boşluk */
+        position: relative;
+    }
+
+        .navbar a::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 2px; /* Çizgi kalınlığı arttırıldı */
+            background: #fff;
+            transition: width 0.3s;
+            z-index: 1000;
+        }
+
+        .navbar a:hover::before {
+            width: 100%;
+        }
+
+        /* Navbar linklerinin hover efekti */
+        .navbar a:hover {
+            color: #ffea00; /* Varsayılan sarı renk */
+        }

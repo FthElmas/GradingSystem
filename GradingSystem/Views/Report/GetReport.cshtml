@@ -1,0 +1,113 @@
+﻿@model MainReportPage
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rapor Gönderme Ekranı</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container mt-5" style="margin-top:100px">
+
+
+        <div class="row mt-3" style="margin-top:100px">
+            <div class="col-12" style="margin-top:100px">
+                @foreach (var student in Model.Student)
+                {
+                    <a class="text-center" style="margin-bottom:20px">@student.StudentName.ToUpper()  @student.StudentSurname.ToUpper()</a>
+                    <table class="table" style="margin-bottom: 50px">
+                        <thead>
+                            <tr>
+                                <th>Rapor İsmi</th>
+                                <th>Rapor</th>
+                            </tr>
+                        </thead>
+                        <tbody style="margin-top:20px">
+
+                            @foreach (var report in Model.StudentReport[Model.Student.IndexOf(student)])
+                            {
+                                var x = @Model.StudentReport[Model.Student.IndexOf(student)];
+                                if (x.Count >= 1)
+                                {
+                                    <tr>
+                                        <td>@report.ReportName</td>
+                                        <td>@report.Report</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                    <table class="table" style="margin-bottom: 50px">
+                        <thead>
+                            <tr>
+                                <th>Proje İsmi</th>
+                                <th>Açıklama</th>
+                                <th>Not</th>
+                            </tr>
+                        </thead>
+                        <tbody style="margin-top:20px">
+                            @foreach (var project in Model.StudentProject[Model.Student.IndexOf(student)])
+                            {
+                                var x = @Model.StudentProject[Model.Student.IndexOf(student)];
+                                if (x.Count >= 1)
+                                {
+                                    <tr>
+                                        <td>@project.ProjectName</td>
+                                        <td>@project.Description</td>
+                                        <td>@project.Mark</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                    <table class="table" style="margin-bottom: 50px">
+                        <thead>
+                            <tr>
+                                <th>Sınav İsmi</th>
+                                <th>Açıklama</th>
+                                <th>Not</th>
+                            </tr>
+                        </thead>
+                        <tbody style="margin-top:20px">
+                            @foreach (var quiz in Model.StudentQuiz[Model.Student.IndexOf(student)])
+                            {
+                                var x = @Model.StudentQuiz[Model.Student.IndexOf(student)];
+                                if (x.Count >= 1)
+                                {
+                                    <tr>
+                                        <td>@quiz.QuizName</td>
+                                        <td>@quiz.Description</td>
+                                        <td>@quiz.Mark</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

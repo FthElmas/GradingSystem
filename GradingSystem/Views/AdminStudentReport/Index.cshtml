@@ -1,0 +1,62 @@
+﻿@model AdminReportPage
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Öğrenci Rapor Düzenleme</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="container mt-5" style="margin-top:100px">
+
+
+        <div class="row mt-3" style="margin-top:100px">
+            <div class="col-12" style="margin-top:100px">
+                @foreach (var student in Model.Student)
+                {
+                    <a>@student.StudentName</a>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Rapor İsmi</th>
+                                <th>Rapor</th>
+                                <th>Raporun Girildiği Hafta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var report in Model.StudentReport[Model.Student.IndexOf(student)])
+                            {
+                                var x = @Model.StudentReport[Model.Student.IndexOf(student)];
+                                if(x.Count >= 1)
+                                {
+                                    <tr>
+                                        <td>@report.ReportName</td>
+                                        <td>@report.Report</td>
+                                        <td>@report.WeekCount</td>
+
+                                        <td class="text-right">
+                                            <a href="@Url.Action("DeleteStudentReport", "AdminStudentReport", new { report = report.StudentReportID })" class="btn btn-danger"><i class="fa fa-trash"></i> Sil</a>
+                                            <a href="@Url.Action("UpdateStudentReport", "AdminStudentReport", new { report = report.StudentReportID })" class="btn btn-warning"><i class="fa fa-edit"></i> Güncelle</a>
+                                        </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@model CourseAddDTO
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Course</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2>Add Course</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <form asp-controller="AdminCourse" asp-action="AddCourse">
+                    @Html.HiddenFor(model => model.CourseID)
+
+                    <div class="form-group">
+                        <label asp-for="CourseName">Course Name:</label>
+                        <input asp-for="CourseName" type="text" class="form-control" id="CourseName" required>
+                    </div>
+
+                    <div class="form-check">
+                        <input asp-for="IsActive" type="checkbox" class="form-check-input" id="IsActive">
+                        <label asp-for="IsActive" class="form-check-label" for="IsActive">Active</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

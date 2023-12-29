@@ -1,0 +1,61 @@
+﻿@model List<CustomerCourseSelectDTO>
+
+
+<header class="header">
+    <a href="#" class="logo">Logo</a>
+
+    <nav class="navbar">
+
+        <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Kurslar
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    @foreach (var item in Model)
+                    {
+                        <a class="nav-link textalign-content-center" asp-route-courseId="@item.ID" asp-area="" asp-controller="Studentpage" asp-action="Index">@item.Name</a>
+                    }
+                </ul>
+            </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                İşlemler
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <a class="nav-link " asp-area="" asp-controller="AdminStudent" asp-action="Index">Öğrenci</a>
+                <a class="nav-link " asp-area="" asp-controller="AdminCourse" asp-action="Index">Kurs</a>
+                <a class="nav-link " asp-area="" asp-controller="AdminCustomer" asp-action="Index">Müşteri</a>
+                <a class="nav-link " asp-area="" asp-controller="AdminCustomerCourse" asp-action="Index">Müşteri Kursları</a>
+                <a class="nav-link " asp-area="" asp-controller="AdminProject" asp-action="Index">Projeler</a>
+                <a class="nav-link " asp-area="" asp-controller="AdminQuiz" asp-action="Index">Sınavlar</a>
+                <a class="nav-link " asp-area="" asp-controller="AdminStudentQuiz" asp-action="Index">Öğrenci Sınav</a>
+                <a class="nav-link " asp-area="" asp-controller="AdminStudentProject" asp-action="Index">Öğrenci Proje</a>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Raporlar
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                @foreach (var item in Model)
+                {
+                    <a class="nav-link textalign-content-center" asp-route-courseId="@item.ID" asp-area="" asp-controller="AdminStudentReport" asp-action="Index">@item.Name</a>
+                }
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Rapor Gönderme
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                @foreach (var item in Model)
+                {
+                    <a class="nav-link textalign-content-center" asp-route-courseId="@item.ID" asp-area="" asp-controller="Report" asp-action="Index">@item.Name</a>
+                }
+            </ul>
+        </li>
+
+    </nav>
+</header>
